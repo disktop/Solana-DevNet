@@ -116,7 +116,7 @@ verify config:
 
 solana config get
 -------------------------------------------------------------------------
-Send SOL airdrop to this Address:
+Send SOL airdrop to this Address (Check Address):
 
 solana address
 -------------------------------------------------------------------------
@@ -134,7 +134,7 @@ Create mint address:
 
 solana-keygen grind --starts-with mnt:1
 -------------------------------------------------------------------------
-*You'll get a mint address place it below
+*You'll get a mint address place it below for "mnt-your-mint-address"
 -------------------------------------------------------------------------
 Mint our Token:
 
@@ -144,16 +144,21 @@ spl-token create-token \
 --decimals 9 \
 mnt-your-mint-address.json
 -------------------------------------------------------------------------
-*You may change decimal number
+*You may change decimal number on your token
 -------------------------------------------------------------------------
-Now you have to upload your metadata (image,name,etc..) to the cloud. You may use:
+Now you have to upload your metadata (image, name,etc..) to the cloud. You may use:
+-------------------------------------------------------------------------
 -https://app.pinata.cloud/ (upload via public)
+-------------------------------------------------------------------------
 (or)
+-------------------------------------------------------------------------
 -https://imgbb.com/ (upload it forever "don't auto-delete")
 -------------------------------------------------------------------------
 Upload your image first make sure it captures the image you want people to see within a squared circle.
-make sure you upload it to the cloud
-get the link to paste to the following metadata format below:
+-------------------------------------------------------------------------
+-Make sure you upload it to the cloud
+-------------------------------------------------------------------------
+-Get cloud link to paste to the following metadata format below:
 -------------------------------------------------------------------------
 {
   "name": "Name",
@@ -163,8 +168,11 @@ get the link to paste to the following metadata format below:
 }
 -------------------------------------------------------------------------
 Upload your metadata as a json file this you can do on Pinata
+-------------------------------------------------------------------------
 -https://app.pinata.cloud/ (upload via public)
+-------------------------------------------------------------------------
 -Edit it in a text file then pinata will let you edit the file to a json right before uploading.
+-------------------------------------------------------------------------
 -You'll get a link to visit the file, save this for 3 steps later
 -------------------------------------------------------------------------
 Now you paste this meta data into the following file write in terminal:
@@ -180,9 +188,9 @@ You'll get write into a file copy paste your edited token metadata info:
   "image": "https://ibb.co/nsCHtpJL"
 }
 -------------------------------------------------------------------------
-To exit Docker type control X and Enter
+Once copy-pasted exit Docker by typing control X and Enter
 -------------------------------------------------------------------------
-Upload your data to the metaverse:
+Throw that shit right into the metaverse:
 
 spl-token initialize-metadata \
 mnteyhFCjqLu5QwfXmEu49dGybyFN5dwPfAhoiMbjNw \
@@ -197,8 +205,8 @@ Now create token account:
 spl-token create-account mnteyhFCjqLu5QwfXmEu49dGybyFN5dwPfAhoiMbjNw
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
-Mint tokens to your mint account:
-#This is the supply
+Mint tokens to your mint account (supply):
+-------------------------------------------------------------------------
 spl-token mint mnteyhFCjqLu5QwfXmEu49dGybyFN5dwPfAhoiMbjNw 1000000
 -------------------------------------------------------------------------
 Check if tokens added:
@@ -212,8 +220,11 @@ spl-token transfer mnteyhFCjqLu5QwfXmEu49dGybyFN5dwPfAhoiMbjNw 10 G5EibadVBKxnsh
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
 Woalha your audit on the Solana Devnet is successfully complete!
+-------------------------------------------------------------------------
 **Credits: NetworkChuck**
+-------------------------------------------------------------------------
 Video Link: https://youtu.be/L4ASwqLZVV0?si=MdBV5RlJhFlY7DH
+-------------------------------------------------------------------------
 See full video to perform your audit on the **Mainnet**!
 
 
