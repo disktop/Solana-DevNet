@@ -15,11 +15,16 @@ Setting up Docker's apt repo:
 
 # Docker Official GPG key:
 sudo apt-get update
+-------------------------------------------------------------------------
 sudo apt-get install ca-certificates curl
+-------------------------------------------------------------------------
 sudo install -m 0755 -d /etc/apt/keyrings
+-------------------------------------------------------------------------
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+-------------------------------------------------------------------------
 sudo chmod a+r /etc/apt/keyrings/docker.asc
-
+-------------------------------------------------------------------------
+-------------------------------------------------------------------------
 # Add rep:
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
@@ -42,7 +47,6 @@ Type in a directory:
 
 mkdir your-token-name
 
-#cd to your directory
 cd  your-token-name
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
@@ -52,46 +56,36 @@ nano Dockerfile
 -------------------------------------------------------------------------
 -------------------------------------------------------------------------
 In the Dockerfile add:
+-------------------------------------------------------------------------
 
-# Use a lightweight base image
 FROM debian:bullseye-slim
 
-# Set non-interactive frontend for apt
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install required dependencies and Rust
 RUN apt-get update && apt-get install -y \
     curl build-essential libssl-dev pkg-config nano \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Add Rust to PATH
 ENV PATH="/root/.cargo/bin:$PATH"
 
-# Verify Rust installation
 RUN rustc --version
 
-# Install Solana CLI
 RUN curl -sSfL https://release.anza.xyz/stable/install | sh \
     && echo 'export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"' >> ~/.bashrc
 
-# Add Solana CLI to PATH
 ENV PATH="/root/.local/share/solana/install/active_release/bin:$PATH"
 
-# Verify Solana CLI installation
 RUN solana --version
 
-# Set up Solana config for Devnet
 RUN solana config set -ud
 
-# Set working directory
 WORKDIR /solana-token
 
-# Default command to run a shell
 CMD ["/bin/bash"]
 
 -------------------------------------------------------------------------
-Do not add this text: click control X and then Enter
+To exit Docker type control X and Enter
 -------------------------------------------------------------------------
 Once in the terminal again, run the Docker Image:
 
@@ -186,6 +180,7 @@ You'll get write into a file copy paste your edited token metadata info:
   "image": "https://ibb.co/nsCHtpJL"
 }
 -------------------------------------------------------------------------
+To exit Docker type control X and Enter
 -------------------------------------------------------------------------
 Upload your data to the metaverse:
 
@@ -214,6 +209,7 @@ spl-token balance mnteyhFCjqLu5QwfXmEu49dGybyFN5dwPfAhoiMbjNw
 Send transer from [mint address] amount [investor's address]:
 
 spl-token transfer mnteyhFCjqLu5QwfXmEu49dGybyFN5dwPfAhoiMbjNw 10 G5EibadVBKxnshP3NSFagJokfxXCD2VPm6WXoqgDSdQ2 --fund-recipient --allow-unfunded-recipient
+-------------------------------------------------------------------------
 -------------------------------------------------------------------------
 Woalha your audit on the Solana Devnet is successfully complete!
 **Credits: NetworkChuck**
