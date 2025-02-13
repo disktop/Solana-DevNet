@@ -3,14 +3,15 @@ Here you'll be able to perform a token creation audit on your Solana token.
 We'll use Docker to perform the Audit.
 Requirements:
 Linux, Windows wsl, or Mac.
-
+-------------------------------------------------------------------------
 Linux and Windows wsl install docker:
 https://docs.docker.com/engine/install/
 or for ubuntu
 https://docs.docker.com/engine/install/ubuntu/
 
 -------------------------------------------------------------------------
-Setting up Docker's apt repo
+Setting up Docker's apt repo:
+-------------------------------------------------------------------------
 
 # Docker Official GPG key:
 sudo apt-get update
