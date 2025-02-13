@@ -1,6 +1,6 @@
 # Solana-DevNet
-Here you'll be able to perform a token creation audit on your Solana token.
-We'll use Docker to perform the Audit.
+Here you'll be able to perform a token creation audit on your Solana token.(Devnet)
+W(e'll use Docker to perform the Audit.
 Requirements:
 Linux, Windows wsl, or Mac.
 -------------------------------------------------------------------------
